@@ -1,0 +1,17 @@
+#  server:
+#    servlet:
+#      context-path: /funcionario/api
+
+ spring:
+   datasource:
+     url: jdbc:mysql://localhost:3306/db_dados?useSSL=false&createDatabaseIfNotExists=true
+     username: root
+     password: becksara123
+
+   jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+      
+      
