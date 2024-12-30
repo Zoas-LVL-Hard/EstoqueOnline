@@ -1,4 +1,4 @@
-package com.center.stock.estoque_online.domain;
+package com.center.stock.estoque_online.produto.domain;
 
 import java.util.UUID;
 
@@ -34,4 +34,15 @@ public class Produto {
     private String modelo;
     @Enumerated(EnumType.STRING)
     private EstadoDeConservacao estadoDeConservacao;
+    @NotBlank
+    @Enumerated(EnumType.STRING)
+    private Unidade unidade;
+
+    public void verificaQuantidadeProduto() {
+        if(quantidadeProduto == null || quantidadeProduto == 0) {
+            quantidadeProduto = Integer.valueOf(0);
+            System.out.println("Indisponível");
+        }
+    }
+
 }

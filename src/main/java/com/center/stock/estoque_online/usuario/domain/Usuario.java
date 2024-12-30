@@ -1,4 +1,4 @@
-package com.center.stock.estoque_online.domain;
+package com.center.stock.estoque_online.usuario.domain;
 
 import java.util.UUID;
 
