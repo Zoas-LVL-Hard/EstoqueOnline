@@ -2,10 +2,10 @@ package com.center.stock.estoque_online.usuario.domain;
 
 import java.util.UUID;
 
+
 import org.hibernate.validator.constraints.br.CPF;
 
 import com.center.stock.estoque_online.usuario.application.api.UsuarioRequest;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,14 +23,17 @@ import lombok.NoArgsConstructor;
 @Table(name = "usuario")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "uuid", name = "idUsuario", updatable = false, unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(columnDefinition = "VARCHAR(36)", name = "id_usuario", updatable = false, unique = true, nullable = false)
     private UUID idUsuario;
+
     @CPF(message = "CPF inválido!")
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String cpf;
+
     @NotBlank
     private String nomeCompleto;
+
     @NotBlank
     private String endereco;
 

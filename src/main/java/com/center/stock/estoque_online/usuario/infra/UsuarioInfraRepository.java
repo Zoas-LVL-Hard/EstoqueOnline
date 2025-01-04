@@ -25,9 +25,7 @@ public class UsuarioInfraRepository implements UsuarioRepository {
             usuarioSpringDataJPARepository.save(usuario);
         } catch (DataIntegrityViolationException e) {
             throw APIException.build(HttpStatus.BAD_REQUEST, "CPF já cadastrado");
-        } catch (Exception ee) {
-            throw APIException.build(HttpStatus.INTERNAL_SERVER_ERROR, "Erro ao salvar usuário");
-        }
+        } 
         log.info("[Finaliza] UsuarioInfraRepository - salva");
         return usuario;
     }
