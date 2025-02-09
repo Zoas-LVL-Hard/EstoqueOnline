@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
+/**
+ * Interface que representa a API de Usuário
+ */
 @RestController
 @RequestMapping("/usuario")
 public interface UsuarioAPI {
