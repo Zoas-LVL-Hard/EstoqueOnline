@@ -2,11 +2,10 @@ package com.center.stock.estoque_online.usuario.domain;
 
 import java.util.UUID;
 
-//import org.hibernate.annotations.Type;
+
 import org.hibernate.validator.constraints.br.CPF;
 
 import com.center.stock.estoque_online.usuario.application.api.UsuarioRequest;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
