@@ -1,5 +1,6 @@
 package com.center.stock.estoque_online.usuario.domain;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 
@@ -37,10 +38,15 @@ public class Usuario {
     @NotBlank
     private String endereco;
 
+    //private boolean aceitaTermos;
+    //private LocalDateTime momentoDoCadastro;
+
 
     public Usuario(UsuarioRequest usuarioRequest) {
         this.cpf = usuarioRequest.getCpf();
         this.nomeCompleto = usuarioRequest.getNomeCompleto();
         this.endereco = usuarioRequest.getEndereco();
+        //this.aceitaTermos = usuarioRequest.isAceitaTermos();
+        //this.momentoDoCadastro = LocalDateTime.now();
     }
 }

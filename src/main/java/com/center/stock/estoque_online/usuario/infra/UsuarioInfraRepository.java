@@ -1,5 +1,7 @@
 package com.center.stock.estoque_online.usuario.infra;
 
+import java.util.List;
+
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
@@ -28,6 +30,14 @@ public class UsuarioInfraRepository implements UsuarioRepository {
         } 
         log.info("[Finaliza] UsuarioInfraRepository - salva");
         return usuario;
+    }
+
+    @Override
+    public List<Usuario> buscaTodosUsuarios() {
+        log.info("[Inicia] UsuarioInfraRepository - buscaTodosUsuarios");
+        List<Usuario> usuarios = usuarioSpringDataJPARepository.findAll();
+        log.info("[Finaliza] UsuarioInfraRepository - buscaTodosUsuarios");
+        return usuarios;
     }
 
 }

@@ -1,5 +1,7 @@
 package com.center.stock.estoque_online.usuario.application.api;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 
 import com.center.stock.estoque_online.usuario.application.service.UsuarioService;
@@ -21,6 +23,14 @@ public class UsuarioController implements UsuarioAPI {
         UsuarioResponse usuarioCriado = usuarioService.criaUsuario(usuarioRequest);
         log.info("[Finaliza] UsuarioController - postNovoUsuario");
         return usuarioCriado;
+    }
+
+    @Override
+    public List<UsuarioListResponse> getTodosUsuarios() {
+        log.info("[Inicia] UsuarioController - getTodosUsuarios");
+        List<UsuarioListResponse> usuarios = usuarioService.buscaTodosUsuarios();
+        log.info("[Finaliza] UsuarioController - getTodosUsuarios");
+        return usuarios;
     }
 
 }
