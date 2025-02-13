@@ -12,11 +12,13 @@ public class UsuarioDetalhadoResponse {
     private String cpf;
     private String nomeCompleto;
     private String endereco;
+    private boolean aceitaTermos;
 
     public UsuarioDetalhadoResponse(Usuario usuario) {
         this.idUsuario = usuario.getIdUsuario();
         this.cpf = usuario.getCpf();
         this.nomeCompleto = usuario.getNomeCompleto();
         this.endereco = usuario.getEndereco();
+        this.aceitaTermos = usuario.isAceitaTermos();
     }
 }

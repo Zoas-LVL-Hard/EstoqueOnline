@@ -3,7 +3,6 @@ package com.center.stock.estoque_online.usuario.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-
 import org.hibernate.validator.constraints.br.CPF;
 
 import com.center.stock.estoque_online.usuario.application.api.UsuarioRequest;
@@ -38,15 +37,14 @@ public class Usuario {
     @NotBlank
     private String endereco;
 
-    //private boolean aceitaTermos;
-    //private LocalDateTime momentoDoCadastro;
-
+    private boolean aceitaTermos;
+    private LocalDateTime momentoDoCadastro;
 
     public Usuario(UsuarioRequest usuarioRequest) {
         this.cpf = usuarioRequest.getCpf();
         this.nomeCompleto = usuarioRequest.getNomeCompleto();
         this.endereco = usuarioRequest.getEndereco();
-        //this.aceitaTermos = usuarioRequest.isAceitaTermos();
-        //this.momentoDoCadastro = LocalDateTime.now();
+        this.aceitaTermos = usuarioRequest.isAceitaTermos();
+        this.momentoDoCadastro = LocalDateTime.now();
     }
 }

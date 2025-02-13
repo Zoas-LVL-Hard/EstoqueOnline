@@ -5,7 +5,6 @@ import org.hibernate.validator.constraints.br.CPF;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
 
-
 /**
  * Classe responsável por representar a requisição de usuario.
  */
@@ -17,4 +16,6 @@ public class UsuarioRequest {
     private String nomeCompleto;
     @NotBlank
     private String endereco;
-}   
+    @NotBlank
+    private boolean aceitaTermos;
+}

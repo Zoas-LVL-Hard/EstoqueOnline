@@ -4,14 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.center.stock.estoque_online.usuario.application.api.UsuarioListResponse;
-
 import java.util.UUID;
 
-import org.springframework.stereotype.Service;
-
 import com.center.stock.estoque_online.usuario.application.api.UsuarioDetalhadoResponse;
-
+import com.center.stock.estoque_online.usuario.application.api.UsuarioListResponse;
 import com.center.stock.estoque_online.usuario.application.api.UsuarioRequest;
 import com.center.stock.estoque_online.usuario.application.api.UsuarioResponse;
 import com.center.stock.estoque_online.usuario.application.repository.UsuarioRepository;
@@ -45,7 +41,7 @@ public class UsuarioApplicationService implements UsuarioService {
         return UsuarioListResponse.converte(usuarios);
 
     }
-        
+
     @Override
     public UsuarioDetalhadoResponse buscaUsuarioAtravezId(UUID idUsuario) {
         log.info("[Inicia] UsuarioApplicationService - buscaUsuarioAtravezId");

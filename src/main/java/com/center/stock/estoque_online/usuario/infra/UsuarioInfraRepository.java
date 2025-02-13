@@ -1,6 +1,5 @@
 package com.center.stock.estoque_online.usuario.infra;
 
-
 import java.util.List;
 
 import java.util.UUID;
@@ -35,7 +34,6 @@ public class UsuarioInfraRepository implements UsuarioRepository {
         return usuario;
     }
 
-  
     @Override
     public List<Usuario> buscaTodosUsuarios() {
         log.info("[Inicia] UsuarioInfraRepository - buscaTodosUsuarios");
@@ -43,8 +41,7 @@ public class UsuarioInfraRepository implements UsuarioRepository {
         log.info("[Finaliza] UsuarioInfraRepository - buscaTodosUsuarios");
         return usuarios;
     }
-  
-  
+
     @Override
     public Usuario buscaPorId(UUID idUsuario) {
         log.info("[Inicia] UsuarioInfraRepository - buscaPorId");
