@@ -1,10 +1,17 @@
 package com.center.stock.estoque_online.usuario.application.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.center.stock.estoque_online.usuario.application.api.UsuarioListResponse;
+
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import com.center.stock.estoque_online.usuario.application.api.UsuarioDetalhadoResponse;
+
 import com.center.stock.estoque_online.usuario.application.api.UsuarioRequest;
 import com.center.stock.estoque_online.usuario.application.api.UsuarioResponse;
 import com.center.stock.estoque_online.usuario.application.repository.UsuarioRepository;
@@ -30,6 +37,15 @@ public class UsuarioApplicationService implements UsuarioService {
                 .build();
     }
 
+    @Override
+    public List<UsuarioListResponse> buscaTodosUsuarios() {
+        log.info("[Inicia] UsuarioApplicationService - buscaTodosUsuarios");
+        List<Usuario> usuarios = usuarioRepository.buscaTodosUsuarios();
+        log.info("[Finaliza] UsuarioApplicationService - buscaTodosUsuarios");
+        return UsuarioListResponse.converte(usuarios);
+
+    }
+        
     @Override
     public UsuarioDetalhadoResponse buscaUsuarioAtravezId(UUID idUsuario) {
         log.info("[Inicia] UsuarioApplicationService - buscaUsuarioAtravezId");
