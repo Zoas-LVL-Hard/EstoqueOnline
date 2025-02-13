@@ -13,6 +13,8 @@
     hibernate:
       ddl-auto: update
     show-sql: true
+
+#   http://localhost:8080/vendedor/swagger-ui/index.html#/
       
 # server:
 #   servlet:

@@ -2,6 +2,8 @@ package com.center.stock.estoque_online.usuario.application.repository;
 
 import java.util.List;
 
+import java.util.UUID;
+
 import com.center.stock.estoque_online.usuario.domain.Usuario;
 
 /**
@@ -12,5 +14,7 @@ public interface UsuarioRepository {
     Usuario salva(Usuario usuario);
 
     List<Usuario> buscaTodosUsuarios();
+
+    Usuario buscaPorId(UUID idUsuario);
 
 }

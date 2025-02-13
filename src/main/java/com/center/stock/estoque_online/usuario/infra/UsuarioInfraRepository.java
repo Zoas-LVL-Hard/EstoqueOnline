@@ -1,6 +1,9 @@
 package com.center.stock.estoque_online.usuario.infra;
 
+
 import java.util.List;
+
+import java.util.UUID;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -27,17 +30,30 @@ public class UsuarioInfraRepository implements UsuarioRepository {
             usuarioSpringDataJPARepository.save(usuario);
         } catch (DataIntegrityViolationException e) {
             throw APIException.build(HttpStatus.BAD_REQUEST, "CPF já cadastrado");
-        } 
+        }
         log.info("[Finaliza] UsuarioInfraRepository - salva");
         return usuario;
     }
 
+  
     @Override
     public List<Usuario> buscaTodosUsuarios() {
         log.info("[Inicia] UsuarioInfraRepository - buscaTodosUsuarios");
         List<Usuario> usuarios = usuarioSpringDataJPARepository.findAll();
         log.info("[Finaliza] UsuarioInfraRepository - buscaTodosUsuarios");
         return usuarios;
+    }
+  
+  
+    @Override
+    public Usuario buscaPorId(UUID idUsuario) {
+        log.info("[Inicia] UsuarioInfraRepository - buscaPorId");
+        Usuario usuario = usuarioSpringDataJPARepository
+                .findById(idUsuario)
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
+        log.info("[Finaliza] UsuarioInfraRepository - buscaPorId");
+        return usuario;
+
     }
 
 }
